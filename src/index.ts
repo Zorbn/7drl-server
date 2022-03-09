@@ -2,6 +2,7 @@ import * as SocketIo from "socket.io";
 import * as Http from "http";
 import express from "express";
 import path from "path";
+import { Game } from "./game";
 
 const port = 8080;
 
@@ -26,3 +27,7 @@ app.get('/', (req, res) => {
 httpServer.listen(port, () => {
     console.log(`Listening on *:${port}`)
 });
+
+/// Start game
+
+let game = new Game(io);
